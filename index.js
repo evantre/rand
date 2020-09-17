@@ -1,20 +1,19 @@
-const { Random } = require("random-js");
+const parseArgs = require("minimist");
+const { randomArray } = require("./lib/randomArray");
 
-const random = new Random();
-const redSize = 6;
-const red = new Set();
+const sConfig = [
+  { size: 6, start: 1, end: 33 },
+  { size: 1, start: 1, end: 16 },
+];
+const dConfig = [
+  { size: 5, start: 1, end: 35 },
+  { size: 2, start: 1, end: 12 },
+];
 
-while (true) {
-  const value = random.integer(1, 33);
-  if (!red.has(value)) {
-    red.add(value);
-  }
+const argv = parseArgs(process.argv.slice(2));
 
-  if (red.size >= redSize) {
-    break;
-  }
+if (argv.d) {
+  console.log(randomArray(dConfig).toString());
+} else {
+  console.log(randomArray(sConfig).toString());
 }
-
-const blue = random.integer(1, 16);
-
-console.log(...[...red].sort((x1, x2) => x1 - x2), blue);

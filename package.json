@@ -1,14 +1,13 @@
 {
   "name": "rand",
   "version": "1.0.0",
-  "description": "",
+  "description": "生成随机双色球、大乐透数字",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "scripts": {},
+  "author": "evantre@qq.com",
+  "license": "MIT",
   "dependencies": {
+    "minimist": "^1.2.5",
     "random-js": "^2.1.0"
   }
 }
