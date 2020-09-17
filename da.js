@@ -1,7 +1,7 @@
 const { Random } = require("random-js");
 
 const random = new Random();
-const redSize = 6;
+const redSize = 5;
 const blueSize = 2;
 const red = new Set();
 const blue = new Set();
